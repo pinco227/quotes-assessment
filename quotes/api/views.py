@@ -14,7 +14,6 @@ class QuoteListCreateAPIView(generics.ListCreateAPIView):
 
 
 class QuoteDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Quote.objects.all().order_by("created_at")
+    queryset = Quote.objects.all()
     serializer_class = QuoteSerializer
     permission_classes = [IsAdminUserOrReadOnly]
-    pagination_class = QuotesPagination
